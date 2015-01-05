@@ -33,7 +33,7 @@
         var watchVisible = CountOnMe.stopwatch();
         var watchFullyVisible = CountOnMe.stopwatch();
         var watchHidden = CountOnMe.stopwatch();
-        var watchDuration = CountOnMe.stopwatch().start();
+        var watchDuration = CountOnMe.stopwatch();
 
         /* Counter */
         report.addMetric('time.visible', new CountOnMe.counter());
@@ -116,6 +116,7 @@
           watchVisible.startIf(status.visible);
           watchFullyVisible.startIf(status.fullyvisible);
           watchHidden.startIf(status.hidden);
+          watchDuration.startIf(!watchDuration.running());
         }
     }
 
