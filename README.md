@@ -1,3 +1,3 @@
 # vissense-metrics.js
 
-* destination file contains brwsrfy-metrics and countonme.js
+A work in progress script to gather statistics about the monitored element.
