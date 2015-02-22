@@ -7,4 +7,6 @@ VisSense.js: Metrics
 
 A metrics plugin for [VisSense.js](https://github.com/vissense/vissense-configurable-polling-strategy).
 
+This script aims to provide an extensible way to gather statistics about a monitored element.
+
 It has an external dependency to [CountOnMe.js](https://github.com/theborakompanioni/countonmejs).
