@@ -9,14 +9,13 @@
     "globals"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "bin",
     "spec",
     "bower_components",
     "node_modules",
     "Gruntfile.js",
-    "karma.conf.html",
+    "karma.conf.js",
     "SpecRunner.html",
     "package.json",
     "bower.json",
@@ -30,7 +29,7 @@
     "jasmine-jquery": "velesin/jasmine-jquery#2.0.5"
   },
   "dependencies": {
-    "vissense": "vissense/vissense#0.2.0",
+    "vissense": "vissense/vissense#0.4.0-rc1",
     "countonmejs": "theborakompanioni/countonmejs#0.1.1"
   }
 }
