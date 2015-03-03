@@ -23,7 +23,6 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    //'bower_components/brwsrfy-metrics/dist/brwsrfy-metrics.js',
                     'bower_components/countonmejs/dist/countonmejs.min.js',
                     'src/main/metrics/vissense.metrics.js'
                 ],

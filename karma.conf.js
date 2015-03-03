@@ -13,7 +13,7 @@ module.exports = function (config) {
       'bower_components/lodash/dist/lodash.min.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
 
-      'bower_components/countonmejs/src/main/countonmejs.js',
+      'bower_components/countonmejs/dist/countonmejs.min.js',
       'bower_components/vissense/dist/vissense.min.js',
 
       'src/main/metrics/vissense.metrics.js',
