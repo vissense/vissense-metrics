@@ -63,8 +63,6 @@
           me.update();
         });
 
-        vismon.start();
-
         this.update();
 
         running = true;
@@ -79,7 +77,6 @@
         cancelOnUpdate();
         cancelOnUpdate = null;
 
-        vismon.stop();
         running = false;
       }
       return this;
@@ -123,17 +120,52 @@
     }
   }
 
-  VisSense.fn.metrics = function (incomingConfig) {
+  var Strategy = VisSense.VisMon.Strategy;
 
-    if (this._metrics) {
-      return this._metrics;
-    }
+  Strategy.MetricsStrategy = function() {};
 
-    var config = incomingConfig || {};
+  Strategy.MetricsStrategy.prototype = Object.create(
+    Strategy.prototype
+  );
 
-    this._metrics = new VisMetrics(this.monitor(config));
+  /**
+   * @method
+   * @name init
+   *
+   * @param {VisSense.VisMon} monitor
+   *
+   * @memberof VisSense.VisMon.Strategy.MetricsStrategy#
+   */
+  Strategy.MetricsStrategy.prototype.init = function (monitor) {
+    var metrics = new VisMetrics(monitor);
+    monitor.metrics = function() {
+      return metrics;
+    };
+  };
 
-    return this._metrics;
+  /**
+   * @method
+   * @name start
+   *
+   * @param {VisSense.VisMon} monitor
+   *
+   * @memberof VisSense.VisMon.Strategy.MetricsStrategy#
+   */
+  Strategy.MetricsStrategy.prototype.start = function (monitor) {
+    monitor.metrics().start();
+    return true;
+  };
+  /**
+   * @method
+   * @name stop
+   *
+   * @param {VisSense.VisMon} monitor
+   *
+   * @memberof VisSense.VisMon.Strategy.MetricsStrategy#
+   */
+  Strategy.MetricsStrategy.prototype.stop = function (monitor) {
+    monitor.metrics().stop();
+    return true;
   };
 
 }.call(this, window, window.VisSense, window.VisSense.Utils, window.CountOnMe));
